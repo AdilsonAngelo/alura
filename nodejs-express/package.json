@@ -2,12 +2,15 @@
     "name": "nodejs-express",
     "version": "1.0.0",
     "description": "",
-    "main": "build/index.js",
+    "main": "build/app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "rm -rf dist && tsc",
-        "watch": "rm -rf dist && tsc -w",
-        "start": "node dist/index.js"
+        "watch": "npm run clean && tsc -w",
+        "clean": "rm -rf dist",
+        "build": "npm run clean && tsc",
+        "start": "node dist/app.js",
+        "format": "prettier --write 'src/**/*.ts'",
+        "lint": "eslint src"
     },
     "repository": {
         "type": "git",
@@ -20,8 +23,19 @@
     },
     "homepage": "https://github.com/AdilsonAngelo/alura#readme",
     "devDependencies": {
-        "@adilson-angelo/eslint-config": "github:AdilsonAngelo/eslint-config",
+        "@adilsonangelo/eslint-config": "1.0.1",
         "@types/node": "^20.10.6",
         "typescript": "^5.3.3"
+    },
+    "prettier": {
+        "singleQuote": true,
+        "tabWidth": 4,
+        "printWidth": 120,
+        "trailingComma": "all",
+        "endOfLine": "lf",
+        "arrowParens": "always"
+    },
+    "eslintConfig": {
+        "extends": "@adilsonangelo/eslint-config"
     }
 }
