@@ -30,14 +30,6 @@
         "ts-node": "^10.9.2",
         "typescript": "^5.3.3"
     },
-    "prettier": {
-        "singleQuote": true,
-        "tabWidth": 4,
-        "printWidth": 120,
-        "trailingComma": "all",
-        "endOfLine": "lf",
-        "arrowParens": "always"
-    },
     "eslintConfig": {
         "extends": "@adilsonangelo/eslint-config"
     }
